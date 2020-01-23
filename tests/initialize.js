@@ -12,4 +12,8 @@ const clearTable = (tableName) =>
 
 const tables = ["channel_messages", "user_messages", "users", "channels"];
 
-Promise.all(tables.map(clearTable)).then(process.exit);
+Promise.all(
+  tables.map((table) => {
+    return clearTable(table);
+  })
+).then(process.exit);
