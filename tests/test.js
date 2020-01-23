@@ -67,7 +67,7 @@ describe("users", () => {
     });
   });
 
-  describe.only("#list", () => {
+  describe("#list", () => {
     const usernames = ["rp-3", "muddybarefeet"];
     const users = usernames.map((username) => ({ username }));
 
@@ -89,7 +89,7 @@ describe("users", () => {
   });
 });
 
-describe("channels", () => {
+describe.only("channels", () => {
   describe("#create", () => {
     const params = { name: "" };
 
