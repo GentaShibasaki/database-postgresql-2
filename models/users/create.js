@@ -3,6 +3,7 @@ const validateUsername = (uName) =>
 
 module.exports = (knex, User) => {
   return (params) => {
+    console.log("*********params: ", params);
     const username = params.username;
 
     if (!validateUsername(username)) {
@@ -19,6 +20,7 @@ module.exports = (knex, User) => {
           .select();
       })
       .then((users) => new User(users.pop())) // create a user model out of the plain database response
+      .then((result) => console.log("***********result is ", result))
       .catch((err) => {
         // sanitize known errors
         if (

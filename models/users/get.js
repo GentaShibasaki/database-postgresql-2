@@ -1,7 +1,7 @@
 module.exports = (knex, User) => {
   return (params) => {
     const username = params.username;
-
+    console.log("inside get.js: params is", params);
     return knex("users")
       .where({ username: username.toLowerCase() })
       .select()
