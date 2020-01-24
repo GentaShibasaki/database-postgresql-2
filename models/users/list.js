@@ -6,6 +6,10 @@ module.exports = (knex, User) => {
         return users.map((user) => {
           return new User(user);
         });
+      })
+      .catch((err) => {
+        // throw unknown errors
+        return Promise.reject(err);
       });
   };
 };
