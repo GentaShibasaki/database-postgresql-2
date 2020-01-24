@@ -32,6 +32,5 @@ module.exports = (knex, Channel) => {
         // throw unknown errors
         return Promise.reject(err);
       });
-    // return Promise.resolve({}); // fix me!
   };
 };
