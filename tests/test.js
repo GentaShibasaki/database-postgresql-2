@@ -10,7 +10,6 @@ const forcePromiseReject = () => {
 
 describe("users", () => {
   describe("setup", () => {
-    // console.log("knex!!!!!!!!", knex.raw("select 1+1 as result"));
     it("able to connect to database", () =>
       knex
         .raw("select 1+1 as result")
@@ -68,10 +67,9 @@ describe("users", () => {
     });
   });
 
-  describe.only("#list", () => {
+  describe("#list", () => {
     const usernames = ["rp-3", "muddybarefeet"];
     const users = usernames.map((username) => ({ username }));
-    console.log("models.users@@@@@@@", models.users);
     before(() => Promise.all(users.map(models.users.create)));
     after(() => knex("users").del());
 
